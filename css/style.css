@@ -20,20 +20,21 @@ body{
 	margin:20px;
 }
 
-
-
 .player_default_picture{
 	height:570px;
 	background-size:100%;
 	background-repeat: no-repeat;
 }
 
-
-.pic_1{
-	background-image: url("../img/tiger_woods.jpg");
-
-}
-
 .players li:hover, .home:hover {
 	cursor: pointer;
 }
+/*
+.AdamScott_default_picture{
+	background-image: url('../img/adam_scott.jpg');
+}
+
+.TigerWoods_default_picture{
+	background-image: url('../img/tiger_woods.jpg');
+}
+*/
