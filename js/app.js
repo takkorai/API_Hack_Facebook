@@ -1,51 +1,43 @@
+
+
+
 $(document).ready( function() {
-	$('.input-text').submit( function(event){
-		// zero out results if previous search has run
 
 
-		$('.results').html('');
-		// get the value of the quote the user submitted
-		var userInputtedOriginalQuote = $(this).find("input[name='originalquote']").val();
 
-		getYodaQuote(userInputtedOriginalQuote);
-
-	});
+    for(var pl in allGolfers){
+        $(".players").append('<li class="' + pl + '">'+allGolfers[pl].golfer+'</li>');
+    }
 
 
+     $(".players").on("click", "li", function(){
+
+        var selectedPlayer = $(this).attr("class");
+        console.log(selectedPlayer);
+     });
 
 
 
 });
 
 
-var showSearchResults = function(query, resultNum) {
-	var results = resultNum + ' results for <strong>' + query;
-	return results;
-};
 
 
+    function Players (golfer, ranking, image){
+    this.golfer = golfer;
+    this.ranking = ranking;
+    this.image = image;
+    };
 
-var getYodaQuote = function(userInputtedOriginalQuote){
-
-        
-        var result= $.ajax({
-            url: 'https://yoda.p.mashape.com/yoda', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-            type: 'GET', // The HTTP Method
-            data: {sentence: userInputtedOriginalQuote}, // Parameters go here
-            datatype: 'json',
-            success: function (result) {
-                console.log(result);
-                var yodaQuote = result;
-                $('.result').append(yodaQuote);
-            },
-            error: function (err) {
-                alert(err);
-            },
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader("X-Mashape-Authorization", "cvqYmQiG8Y1FiHfLX0FWkG3RIv905sNP"); // Enter your Mashape key here
-            }
-        });
-
-};
-
-
+    var allGolfers = {
+    AdamScott: new Players("Adam Scott",1, "images/flyingtrapeze.jpg"),
+    HenrikStenson: new Players("Henrik Stenson",2, "images/hoop.png"),
+    BubbaWatson: new Players("Bubba Watson ",3, "images/germanwheel.jpg"),
+    TigerWoods: new Players("Tiger Woods",4, "images/handbalancing.jpg"),
+    MattKuchar: new Players("Matt Kuchar",5, "images/firejuggling.png"),
+    RoryMcIlroy: new Players("Rory McIlroy",6, "images/firejuggling.png"),
+    JasonDay: new Players("Jason Day",7, "images/firejuggling.png"),
+    SergioGarcia: new Players("Sergio Garcia",8, "images/firejuggling.png"),
+    JordanSpieth: new Players("Jordan Spieth",9, "images/firejuggling.png"),
+    JustinRose: new Players("Justin Rose",10, "images/firejuggling.png"),
+    };

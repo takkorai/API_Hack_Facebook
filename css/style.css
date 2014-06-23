@@ -1,39 +1,39 @@
-html{
-
-	font-style::"Times New Roman",Georgia,Serif;
-
-}
-header{
-	position: fixed !important;
-	width: 100%;
-	z-index: 10000;
-	background-color: white;
-	height:40px;
+body{
+	background-color: black;
 }
 
-.container{
-	padding-top: 40px; 
+.picture{
+	background-color: green;
+	border-style: solid;
+	border-width: 1px;
+
+}
+.picture, .golfers{
+	height: 600px;
+}
+.golfers{
+	background-color: red;
+	color:white;
 }
 
-
-.image_welcome {
-	background:#011309 url("../img/yoda_front.jpg") no-repeat fixed 50% 0px;
-	overflow:hidden;
-	position: relative;
-	z-index: 10;
-	min-height: 800px;
-}
-.image_quote{
-	background:#011309 url("../img/yoda-quote.jpg") no-repeat fixed 50% 0px;
-	overflow:hidden;
-	position: relative;
-	z-index: 10;
-	min-height: 800px;
+.golfers li{
+	margin:20px;
 }
 
 
 
+.player_default_picture{
+	height:570px;
+	background-size:100%;
+	background-repeat: no-repeat;
+}
 
-.yoda{
-	width: 100%
+
+.pic_1{
+	background-image: url("../img/tiger_woods.jpg");
+
+}
+
+.players li:hover, .home:hover {
+	cursor: pointer;
 }
