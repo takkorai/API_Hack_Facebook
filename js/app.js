@@ -8,9 +8,8 @@ $(document).ready( function() {
     for(var pl in allGolfers){
         $(".players").append('<li class="' + pl + '">'+allGolfers[pl].golfer+'</li>');
         $(".players_picture").append('<li class="' + pl + ' '+pl+'_default_picture player_default_picture hidden">&nbsp;</li>');
-        var CurrentPlayersImageClass= (pl+'_default_picture player_default_picture');
-
-        //$(".CurrentPlayersImageClass").css('background-image', 'url(' + img/adam_scott.jpg + ')');
+        var CurrentPlayersImageClass= $("."+pl+"_default_picture");
+        CurrentPlayersImageClass.css('background-image', 'url(' + allGolfers[pl].image + ')');
     };
 
      $(".players").on("mouseover", "li", function(){
@@ -21,7 +20,6 @@ $(document).ready( function() {
         
      });
      $(".players").on("mouseout", "li", function(){
-
         var hoveredPlayer = $(this).attr("class");
         console.log(hoveredPlayer);
         $(".players_picture").find('.'+hoveredPlayer+'').addClass("hidden")
@@ -32,7 +30,6 @@ $(document).ready( function() {
      
 
      $(".players").on("click", "li", function(){
-
         var selectedPlayer = $(this).attr("class");
         console.log(selectedPlayer);
      });
@@ -52,7 +49,7 @@ $(document).ready( function() {
 
     var allGolfers = {
     AdamScott: new Players("Adam Scott",1, "img/adam_scott.jpg"),
-    HenrikStenson: new Players("Henrik Stenson",2, "img/HenrikStenson.png"),
+    HenrikStenson: new Players("Henrik Stenson",2, "img/HenrikStenson.jpg"),
     BubbaWatson: new Players("Bubba Watson ",3, "img/BubbaWatson.jpg"),
     TigerWoods: new Players("Tiger Woods",4, "img/TigerWoods.jpg"),
     MattKuchar: new Players("Matt Kuchar",5, "img/MattKuchar.jpg"),
